@@ -7,7 +7,6 @@ application:
   upstreams:
     - location: /
       backend: http://web:8080/
-
 services:
   db:
     # upstream: postgres:16-alpine
@@ -26,10 +25,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 12
-
   api:
     # upstream: ghcr.io/shaongitbd/doory-backend:0.1.0
-    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.1.0@sha256:0d37e7176d9df586fae56b8367ac68ff3ae7c585df6d72d13fffd92bf432bf6a
+    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.1.0
     depends_on:
       - db
     environment:
@@ -60,7 +58,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 90s
-
   realtime:
     # 实时协作（WebSocket），同 backend 镜像
     image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.1.0@sha256:0d37e7176d9df586fae56b8367ac68ff3ae7c585df6d72d13fffd92bf432bf6a
@@ -109,10 +106,9 @@ services:
       timeout: 5s
       retries: 5
       start_period: 60s
-
   web:
     # upstream: ghcr.io/shaongitbd/doory-frontend:0.1.0
-    image: ghcr.nju.edu.cn/shaongitbd/doory-frontend:0.1.0@sha256:335eb85b6c9fd021ec876d3befe6eb92c1bd6df9c6ea25d770df3ff99703f256
+    image: ghcr.nju.edu.cn/shaongitbd/doory-frontend:0.1.0
     depends_on:
       - api
       - realtime
