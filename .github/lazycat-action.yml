@@ -1,0 +1,49 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/doory.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: backend
+
+build:
+  run_buildscript: false
+
+images:
+  - id: backend
+    target: service
+    service: api
+    source: ghcr.io/shaongitbd/doory-backend
+    channel: stable
+    sort: semver
+    tag_regex: '^\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+  - id: frontend
+    target: service
+    service: web
+    source: ghcr.io/shaongitbd/doory-frontend
+    channel: stable
+    sort: semver
+    tag_regex: '^\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Doory
+    summary: "开源 Canva 替代：在线设计 + 实时协作"

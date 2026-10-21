@@ -1,0 +1,21 @@
+manifest: ./lzc-manifest.yml
+pkgout: ./dist/
+icon: ./icon.png
+# nginx 通过 doory-api / doory-realtime 别名访问后端，lzc-manifest 无别名字段，经 compose_override 注入
+compose_override:
+  services:
+    api:
+      networks:
+        default:
+          aliases:
+            - doory-api
+    realtime:
+      networks:
+        default:
+          aliases:
+            - doory-realtime
+    web:
+      networks:
+        default:
+          aliases:
+            - doory-web

@@ -1,0 +1,15 @@
+package: community.lazycat.app.doory
+version: 0.1.0
+name: Doory
+description: "Open source Canva alternative: collaborative design editor with real-time co-editing"
+min_os_version: 1.5.0
+author: shaongitbd
+license: AAL
+homepage: https://github.com/shaongitbd/doory
+locales:
+  zh:
+    name: "Doory"
+    description: "开源 Canva 替代：在线设计编辑器，支持实时多人协作、图片导出与模板"
+  en:
+    name: "Doory"
+    description: "Open source Canva alternative with real-time collaboration"
