@@ -1,5 +1,5 @@
 package: community.lazycat.app.doory
-version: 0.1.0
+version: 0.2.0
 name: Doory
 description: "Open source Canva alternative: collaborative design editor with real-time co-editing"
 min_os_version: 1.5.0

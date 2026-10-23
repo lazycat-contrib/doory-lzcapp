@@ -26,8 +26,8 @@ services:
       timeout: 5s
       retries: 12
   api:
-    # upstream: ghcr.io/shaongitbd/doory-backend:0.1.0
-    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.1.0
+    # upstream: ghcr.io/shaongitbd/doory-backend:0.2.0
+    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.2.0
     depends_on:
       - db
     environment:
@@ -107,8 +107,8 @@ services:
       retries: 5
       start_period: 60s
   web:
-    # upstream: ghcr.io/shaongitbd/doory-frontend:0.1.0
-    image: ghcr.nju.edu.cn/shaongitbd/doory-frontend:0.1.0
+    # upstream: ghcr.io/shaongitbd/doory-frontend:0.2.0
+    image: ghcr.nju.edu.cn/shaongitbd/doory-frontend:0.2.0
     depends_on:
       - api
       - realtime
