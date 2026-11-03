@@ -26,8 +26,8 @@ services:
       timeout: 5s
       retries: 12
   api:
-    # upstream: ghcr.io/shaongitbd/doory-backend:0.2.0
-    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.2.0
+    # upstream: ghcr.io/shaongitbd/doory-backend:0.3.0
+    image: ghcr.nju.edu.cn/shaongitbd/doory-backend:0.3.0
     depends_on:
       - db
     environment:
